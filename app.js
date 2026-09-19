@@ -2,6 +2,58 @@ const config = window.DZAIRLY_CONFIG || {};
 
 function qs(id) { return document.getElementById(id); }
 
+function referrerDomain() {
+  try {
+    if (!document.referrer) return null;
+    return new URL(document.referrer).hostname || null;
+  } catch (_) {
+    return null;
+  }
+}
+
+function campaignData() {
+  const params = new URLSearchParams(location.search);
+  return {
+    utm_source: params.get("utm_source"),
+    utm_medium: params.get("utm_medium"),
+    utm_campaign: params.get("utm_campaign")
+  };
+}
+
+async function trackEvent(eventName, metadata = {}) {
+  if (!config.supabaseUrl || !config.supabasePublishableKey) return;
+  const campaign = campaignData();
+  const payload = {
+    event_name: eventName,
+    path: location.pathname,
+    referrer_domain: referrerDomain(),
+    utm_source: campaign.utm_source,
+    utm_medium: campaign.utm_medium,
+    utm_campaign: campaign.utm_campaign,
+    metadata
+  };
+
+  try {
+    await fetch(`${config.supabaseUrl}/rest/v1/analytics_events`, {
+      method: "POST",
+      keepalive: true,
+      headers: {
+        "Content-Type": "application/json",
+        apikey: config.supabasePublishableKey,
+        Prefer: "return=minimal"
+      },
+      body: JSON.stringify(payload)
+    });
+  } catch (_) {}
+}
+
+const formEventNames = {
+  eventForm: ["lead_submit_success", "lead_submit_error"],
+  conciergeForm: ["concierge_submit_success", "concierge_submit_error"],
+  vendorForm: ["vendor_submit_success", "vendor_submit_error"]
+};
+
+
 function serializeForm(form) {
   const data = {};
   new FormData(form).forEach((value, key) => {
@@ -98,8 +150,12 @@ function bindForm(id, table, draftKey) {
         success.classList.add("show");
       }
       form.reset();
+      const names = formEventNames[form.id];
+      if (names) trackEvent(names[0], { form: form.id });
     } catch (error) {
       console.error("DZAIRLY form submission failed", error);
+      const names = formEventNames[form.id];
+      if (names) trackEvent(names[1], { form: form.id });
       if (success) {
         success.textContent = "L'envoi n'a pas abouti. Votre saisie est conservée sur cet appareil : réessayez dans quelques instants.";
         success.classList.add("show");
@@ -215,3 +271,11 @@ pills.forEach(pill => pill.addEventListener("click", () => {
     card.style.display = (value === "all" || card.dataset.category === value) ? "" : "none";
   });
 }));
+
+document.querySelectorAll(".track-cta").forEach(link => {
+  link.addEventListener("click", () => {
+    trackEvent("cta_click", { cta: link.dataset.cta || "unknown" });
+  });
+});
+
+trackEvent("page_view", { title: document.title });
