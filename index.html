@@ -2,26 +2,53 @@
 <html lang="fr">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>DZAIRLY — Votre événement en Algérie. Sans la distance.</title>
-  <meta name="description" content="DZAIRLY aide la diaspora à organiser mariages et événements en Algérie à distance : prestataires, devis et conciergerie locale.">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <title>DZAIRLY — Organisez votre mariage et vos événements en Algérie à distance</title>
+  <meta name="description" content="DZAIRLY aide la diaspora à organiser mariages et événements en Algérie à distance : prestataires, devis, conciergerie locale et accompagnement sur place.">
+  <meta name="theme-color" content="#17242b">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+  <link rel="canonical" href="https://dzairly.vercel.app/">
+
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:site_name" content="DZAIRLY">
+  <meta property="og:title" content="DZAIRLY — Votre événement en Algérie. Sans la distance.">
+  <meta property="og:description" content="Prestataires, devis et conciergerie locale pour organiser votre événement en Algérie depuis l'étranger.">
+  <meta property="og:url" content="https://dzairly.vercel.app/">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="DZAIRLY — Votre événement en Algérie. Sans la distance.">
+  <meta name="twitter:description" content="Organisez votre mariage ou événement en Algérie depuis l'étranger.">
+
   <link rel="stylesheet" href="/styles.css">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "DZAIRLY",
+    "url": "https://dzairly.vercel.app/",
+    "description": "Plateforme de mise en relation et de conciergerie pour organiser des événements en Algérie depuis l'étranger."
+  }
+  </script>
 </head>
 <body id="home">
   <div class="topbar">France ↔ Algérie · Lancement bêta</div>
-  <nav class="nav">
+
+  <nav class="nav" aria-label="Navigation principale">
     <div class="container nav-inner">
-      <a class="brand" href="#home"><span class="mark"></span>DZAIRLY</a>
+      <a class="brand" href="#home" aria-label="Accueil DZAIRLY"><span class="mark"></span>DZAIRLY</a>
+
       <div class="nav-links">
         <a href="#prestataires">Prestataires</a>
-        <a href="#organiser">Organiser</a>
+        <a href="#evenements">Événements</a>
         <a href="#conciergerie">Conciergerie</a>
         <a href="#pro">Professionnels</a>
       </div>
+
       <div class="nav-actions">
-        <a class="btn btn-secondary" href="#pro">Je suis prestataire</a>
-        <a class="btn btn-primary" href="#organiser">Organiser mon mariage</a>
+        <a class="btn btn-secondary track-cta" data-cta="nav_vendor" href="#pro">Je suis prestataire</a>
+        <a class="btn btn-primary track-cta" data-cta="nav_project" href="#organiser">Créer mon projet</a>
       </div>
     </div>
   </nav>
@@ -31,12 +58,14 @@
       <div class="container hero-grid">
         <div>
           <div class="eyebrow">✦ Pensé pour la diaspora algérienne</div>
-          <h1>Votre mariage en Algérie. <span>Sans la distance.</span></h1>
-          <p class="lead">Trouvez vos prestataires, demandez vos devis et faites-vous accompagner sur place pour organiser votre événement en Algérie depuis la France ou ailleurs.</p>
+          <h1>Votre événement en Algérie. <span>Sans la distance.</span></h1>
+          <p class="lead">Trouvez vos prestataires, demandez vos devis et faites-vous accompagner sur place pour organiser votre mariage ou votre événement en Algérie depuis la France ou ailleurs.</p>
+
           <div class="hero-cta">
-            <a class="btn btn-terracotta" href="#organiser">Créer mon projet →</a>
-            <a class="btn btn-secondary" href="#prestataires">Explorer les prestataires</a>
+            <a class="btn btn-terracotta track-cta" data-cta="hero_project" href="#organiser">Créer mon projet →</a>
+            <a class="btn btn-secondary track-cta" data-cta="hero_vendors" href="#prestataires">Explorer les prestataires</a>
           </div>
+
           <div class="trust">
             <span><b>✓</b> Demande gratuite</span>
             <span><b>✓</b> Prestataires sélectionnés</span>
@@ -44,13 +73,14 @@
           </div>
         </div>
 
-        <div class="hero-card">
+        <div class="hero-card" aria-label="Aperçu d'un projet DZAIRLY">
           <div style="font-size:13px;opacity:.8">DZAIRLY · Mon projet</div>
           <div class="phone">
             <div class="phone-head">
               <div><small class="muted">Mariage de</small><br><b>Sarah & Karim</b></div>
               <span class="mini-badge">Béjaïa · Juil. 2027</span>
             </div>
+
             <div class="budget">
               <div class="budget-row">
                 <div><small class="muted">Budget prévu</small><div style="font-size:28px;font-weight:900">18 000 €</div></div>
@@ -58,6 +88,7 @@
               </div>
               <div class="progress"><span></span></div>
             </div>
+
             <div class="task-list">
               <div class="task"><span class="dot ok"></span><div><b>Salle</b><div class="small muted">Sélection confirmée</div></div></div>
               <div class="task"><span class="dot ok"></span><div><b>Photographe</b><div class="small muted">3 devis reçus</div></div></div>
@@ -72,21 +103,31 @@
     <section class="section white">
       <div class="container">
         <div class="section-head">
-          <div><div class="kicker">Tout au même endroit</div><h2>Les bons prestataires.<br>Sans 50 appels WhatsApp.</h2></div>
-          <p class="section-sub">Le mariage est notre première verticale. DZAIRLY s'étendra ensuite aux fiançailles, hennés, anniversaires et autres événements.</p>
+          <div>
+            <div class="kicker">Tout au même endroit</div>
+            <h2>Les bons prestataires.<br>Sans 50 appels WhatsApp.</h2>
+          </div>
+          <p class="section-sub">DZAIRLY centralise la recherche, les demandes de devis et l'accompagnement local pour réduire les allers-retours quand on organise depuis l'étranger.</p>
         </div>
+
         <div class="grid grid-4">
-          <a class="card icon-card" href="#prestataires"><div class="icon">🏛️</div><div><h3>Salles</h3><p class="muted">Capacité, ville, services et disponibilité.</p></div></a>
-          <a class="card icon-card" href="#prestataires"><div class="icon">🍽️</div><div><h3>Traiteurs</h3><p class="muted">Menus, prestations et demandes de devis.</p></div></a>
-          <a class="card icon-card" href="#prestataires"><div class="icon">📷</div><div><h3>Photo & vidéo</h3><p class="muted">Portfolio et formules adaptées.</p></div></a>
-          <a class="card icon-card" href="#prestataires"><div class="icon">✨</div><div><h3>Décoration</h3><p class="muted">Ambiances, scénographies et thèmes.</p></div></a>
+          <a class="card icon-card track-cta" data-cta="category_venue" href="#prestataires"><div class="icon">🏛️</div><div><h3>Salles</h3><p class="muted">Capacité, ville, services et disponibilité.</p></div></a>
+          <a class="card icon-card track-cta" data-cta="category_catering" href="#prestataires"><div class="icon">🍽️</div><div><h3>Traiteurs</h3><p class="muted">Menus, prestations et demandes de devis.</p></div></a>
+          <a class="card icon-card track-cta" data-cta="category_photo" href="#prestataires"><div class="icon">📷</div><div><h3>Photo & vidéo</h3><p class="muted">Portfolio et formules adaptées.</p></div></a>
+          <a class="card icon-card track-cta" data-cta="category_decor" href="#prestataires"><div class="icon">✨</div><div><h3>Décoration</h3><p class="muted">Ambiances, scénographies et thèmes.</p></div></a>
         </div>
       </div>
     </section>
 
     <section class="section">
       <div class="container">
-        <div class="section-head"><div><div class="kicker">Comment ça marche</div><h2>De Paris à Alger,<br>trois étapes.</h2></div></div>
+        <div class="section-head">
+          <div>
+            <div class="kicker">Comment ça marche</div>
+            <h2>De Paris à Alger,<br>trois étapes.</h2>
+          </div>
+        </div>
+
         <div class="grid grid-3 steps">
           <div class="card step"><h3>Décrivez votre événement</h3><p class="muted">Ville, date, nombre d'invités, budget et services recherchés.</p></div>
           <div class="card step"><h3>Recevez des options adaptées</h3><p class="muted">Comparez les profils et centralisez vos demandes de devis.</p></div>
@@ -95,19 +136,43 @@
       </div>
     </section>
 
-    <section id="prestataires" class="section white" style="scroll-margin-top:90px">
+    <section id="evenements" class="section white" style="scroll-margin-top:90px">
       <div class="container">
         <div class="section-head">
-          <div><div class="kicker">Annuaire DZAIRLY</div><h2>Trouvez les bons prestataires.</h2></div>
-          <p class="section-sub">Les premiers partenaires sont en cours d'onboarding. Les profils vérifiés apparaîtront automatiquement ici.</p>
+          <div>
+            <div class="kicker">Au-delà du mariage</div>
+            <h2>Un même réseau pour tous vos moments en Algérie.</h2>
+          </div>
+          <p class="section-sub">Le mariage est notre priorité de lancement, mais la plateforme est conçue dès le départ pour d'autres événements privés et professionnels.</p>
         </div>
-        <div class="filters">
+
+        <div class="grid grid-4">
+          <div class="card compact-card"><div class="icon">💍</div><h3>Mariages</h3><p class="muted">Salle, traiteur, photo, décoration, musique et coordination.</p></div>
+          <div class="card compact-card"><div class="icon">🌙</div><h3>Fiançailles & henné</h3><p class="muted">Prestataires adaptés aux événements familiaux et traditions.</p></div>
+          <div class="card compact-card"><div class="icon">🎂</div><h3>Anniversaires & famille</h3><p class="muted">Organisation, restauration, animation et décoration.</p></div>
+          <div class="card compact-card"><div class="icon">🏢</div><h3>Événements B2B</h3><p class="muted">Séminaires, inaugurations, soirées d'entreprise et lancements.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="prestataires" class="section" style="scroll-margin-top:90px">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="kicker">Annuaire DZAIRLY</div>
+            <h2>Trouvez les bons prestataires.</h2>
+          </div>
+          <p class="section-sub">Les premiers partenaires sont en cours d'onboarding. Les profils publiés apparaîtront automatiquement ici.</p>
+        </div>
+
+        <div class="filters" aria-label="Filtres prestataires">
           <button class="pill active" data-filter="all">Tous</button>
           <button class="pill" data-filter="salle">Salles</button>
           <button class="pill" data-filter="traiteur">Traiteurs</button>
           <button class="pill" data-filter="photo">Photo & vidéo</button>
           <button class="pill" data-filter="deco">Décoration</button>
         </div>
+
         <div class="vendor-grid">
           <article class="vendor-card" data-category="salle"><div class="vendor-visual"></div><div class="vendor-body"><div class="vendor-top"><span class="tag">Salle · Alger</span><span class="small muted">Profil démo</span></div><h3>Exemple — Salle Prestige</h3><div class="vendor-meta"><span>300–500 pers.</span><span>Devis sur demande</span></div></div></article>
           <article class="vendor-card" data-category="photo"><div class="vendor-visual"></div><div class="vendor-body"><div class="vendor-top"><span class="tag">Photo & vidéo · Oran</span><span class="small muted">Profil démo</span></div><h3>Exemple — Studio Mariage</h3><div class="vendor-meta"><span>Reportage complet</span><span>Devis sur demande</span></div></div></article>
@@ -116,90 +181,192 @@
       </div>
     </section>
 
-    <section id="organiser" class="section" style="scroll-margin-top:90px">
+    <section id="organiser" class="section white" style="scroll-margin-top:90px">
       <div class="container">
-        <div class="section-head"><div><div class="kicker">Votre projet</div><h2>Parlez-nous de votre mariage.</h2></div><p class="section-sub">Quelques informations suffisent pour commencer. Aucun paiement n'est demandé à cette étape.</p></div>
+        <div class="section-head">
+          <div>
+            <div class="kicker">Votre projet</div>
+            <h2>Parlez-nous de votre événement.</h2>
+          </div>
+          <p class="section-sub">Quelques informations suffisent pour commencer. Aucun paiement n'est demandé à cette étape.</p>
+        </div>
+
         <form id="eventForm" class="form-shell">
           <div class="form-grid">
-            <div class="field"><label>Prénom *</label><input name="first_name" required placeholder="Sarah"></div>
-            <div class="field"><label>Nom</label><input name="last_name" placeholder="B."></div>
-            <div class="field"><label>Email *</label><input type="email" name="email" required placeholder="sarah@email.com"></div>
-            <div class="field"><label>Téléphone / WhatsApp *</label><input name="phone" required placeholder="+33 …"></div>
+            <div class="field"><label>Prénom *</label><input name="first_name" required autocomplete="given-name" placeholder="Sarah"></div>
+            <div class="field"><label>Nom</label><input name="last_name" autocomplete="family-name" placeholder="B."></div>
+            <div class="field"><label>Email *</label><input type="email" name="email" required autocomplete="email" placeholder="sarah@email.com"></div>
+            <div class="field"><label>Téléphone / WhatsApp *</label><input name="phone" required autocomplete="tel" placeholder="+33 …"></div>
+
             <div class="field"><label>Pays de résidence *</label><select name="residence_country" required><option value="">Choisir</option><option>France</option><option>Belgique</option><option>Suisse</option><option>Canada</option><option>Royaume-Uni</option><option>Algérie</option><option>Autre</option></select></div>
             <div class="field"><label>Ville / wilaya *</label><input name="event_city" required placeholder="Béjaïa"></div>
+
             <div class="field"><label>Date prévue</label><input type="date" name="event_date"></div>
             <div class="field"><label>Nombre d'invités</label><select name="guest_count"><option value="">À préciser</option><option>Moins de 100</option><option>100–200</option><option>200–300</option><option>300–500</option><option>500+</option></select></div>
+
             <div class="field"><label>Budget envisagé</label><select name="budget_range"><option value="">À préciser</option><option>Moins de 5 000 €</option><option>5 000–10 000 €</option><option>10 000–20 000 €</option><option>20 000–35 000 €</option><option>35 000 € et +</option></select></div>
             <div class="field"><label>Type d'événement</label><select name="event_type"><option>Mariage</option><option>Fiançailles</option><option>Henné</option><option>Anniversaire</option><option>Événement familial</option><option>Événement professionnel</option></select></div>
-            <div class="field full"><label>Services recherchés</label><div class="check-grid">
-              <label class="check"><input type="checkbox" name="services" value="Salle"> Salle</label>
-              <label class="check"><input type="checkbox" name="services" value="Traiteur"> Traiteur</label>
-              <label class="check"><input type="checkbox" name="services" value="PhotoVideo"> Photo & vidéo</label>
-              <label class="check"><input type="checkbox" name="services" value="Decoration"> Décoration</label>
-              <label class="check"><input type="checkbox" name="services" value="DJ"> DJ / orchestre</label>
-              <label class="check"><input type="checkbox" name="services" value="Beaute"> Beauté / tenues</label>
-            </div></div>
+
+            <div class="field full">
+              <label>Services recherchés</label>
+              <div class="check-grid">
+                <label class="check"><input type="checkbox" name="services" value="Salle"> Salle</label>
+                <label class="check"><input type="checkbox" name="services" value="Traiteur"> Traiteur</label>
+                <label class="check"><input type="checkbox" name="services" value="PhotoVideo"> Photo & vidéo</label>
+                <label class="check"><input type="checkbox" name="services" value="Decoration"> Décoration</label>
+                <label class="check"><input type="checkbox" name="services" value="DJ"> DJ / orchestre</label>
+                <label class="check"><input type="checkbox" name="services" value="Beaute"> Beauté / tenues</label>
+              </div>
+            </div>
+
             <div class="field full"><label>Votre message</label><textarea name="message" rows="4" placeholder="Dites-nous ce qui compte le plus pour vous…"></textarea></div>
-            <div class="field full"><label class="check"><input type="checkbox" name="consent" value="true" required> J'accepte d'être recontacté(e) au sujet de mon projet.</label></div>
+
+            <div class="field full">
+              <label class="check"><input type="checkbox" name="consent" value="true" required> J'accepte d'être recontacté(e) au sujet de mon projet et j'ai pris connaissance de la <a href="/confidentialite.html">politique de confidentialité</a>.</label>
+            </div>
           </div>
+
           <button class="btn btn-terracotta" type="submit" style="width:100%;margin-top:18px">Envoyer mon projet →</button>
-          <div class="success"></div>
+          <div class="success" role="status" aria-live="polite"></div>
         </form>
       </div>
     </section>
 
-    <section id="conciergerie" class="section white" style="scroll-margin-top:90px">
+    <section id="conciergerie" class="section" style="scroll-margin-top:90px">
       <div class="container">
         <div class="banner">
-          <div><div class="kicker" style="color:#e1b986">DZAIRLY Conciergerie</div><h2>Nous sommes sur place<br>quand vous ne pouvez pas l'être.</h2><p>Visite vidéo, vérification d'un prestataire, récupération d'un devis ou coordination locale : DZAIRLY devient votre relais en Algérie.</p></div>
+          <div>
+            <div class="kicker" style="color:#e1b986">DZAIRLY Conciergerie</div>
+            <h2>Nous sommes sur place<br>quand vous ne pouvez pas l'être.</h2>
+            <p>Visite vidéo, vérification d'un prestataire, récupération d'un devis ou coordination locale : DZAIRLY devient votre relais en Algérie.</p>
+          </div>
+          <a class="btn btn-terracotta track-cta" data-cta="concierge_banner" href="#conciergeForm">Faire une demande →</a>
         </div>
+
         <div style="height:28px"></div>
+
         <form id="conciergeForm" class="form-shell">
           <div class="form-grid">
-            <div class="field"><label>Prénom *</label><input name="first_name" required></div>
-            <div class="field"><label>Téléphone / WhatsApp *</label><input name="phone" required></div>
-            <div class="field"><label>Email</label><input type="email" name="email"></div>
+            <div class="field"><label>Prénom *</label><input name="first_name" required autocomplete="given-name"></div>
+            <div class="field"><label>Téléphone / WhatsApp *</label><input name="phone" required autocomplete="tel"></div>
+            <div class="field"><label>Email</label><input type="email" name="email" autocomplete="email"></div>
             <div class="field"><label>Ville concernée *</label><input name="city" required placeholder="Alger"></div>
             <div class="field full"><label>Besoin *</label><select name="request_type" required><option>Visite vidéo</option><option>Vérification d'un prestataire</option><option>Récupération d'un devis</option><option>Coordination locale</option><option>Autre</option></select></div>
             <div class="field full"><label>Détail *</label><textarea name="message" rows="4" required></textarea></div>
-            <div class="field full"><label class="check"><input type="checkbox" name="consent" value="true" required> J'accepte d'être recontacté(e).</label></div>
+            <div class="field full"><label class="check"><input type="checkbox" name="consent" value="true" required> J'accepte d'être recontacté(e) et j'ai pris connaissance de la <a href="/confidentialite.html">politique de confidentialité</a>.</label></div>
           </div>
+
           <button class="btn btn-primary" type="submit" style="width:100%;margin-top:18px">Envoyer ma demande</button>
-          <div class="success"></div>
+          <div class="success" role="status" aria-live="polite"></div>
         </form>
       </div>
     </section>
 
-    <section id="pro" class="section" style="scroll-margin-top:90px">
+    <section id="pro" class="section white" style="scroll-margin-top:90px">
       <div class="container">
-        <div class="section-head"><div><div class="kicker">Professionnels en Algérie</div><h2>Développez votre clientèle diaspora.</h2></div><p class="section-sub">L'inscription est gratuite pendant le lancement bêta.</p></div>
+        <div class="section-head">
+          <div>
+            <div class="kicker">Professionnels en Algérie</div>
+            <h2>Développez votre clientèle diaspora.</h2>
+          </div>
+          <p class="section-sub">L'inscription est gratuite pendant le lancement bêta. Chaque candidature est revue avant publication.</p>
+        </div>
+
         <form id="vendorForm" class="form-shell">
           <div class="form-grid">
-            <div class="field"><label>Entreprise *</label><input name="business_name" required></div>
-            <div class="field"><label>Contact *</label><input name="contact_name" required></div>
-            <div class="field"><label>Téléphone *</label><input name="phone" required></div>
-            <div class="field"><label>Email *</label><input type="email" name="email" required></div>
+            <div class="field"><label>Entreprise *</label><input name="business_name" required autocomplete="organization"></div>
+            <div class="field"><label>Contact *</label><input name="contact_name" required autocomplete="name"></div>
+            <div class="field"><label>Téléphone *</label><input name="phone" required autocomplete="tel"></div>
+            <div class="field"><label>Email *</label><input type="email" name="email" required autocomplete="email"></div>
             <div class="field"><label>Ville *</label><input name="city" required></div>
-            <div class="field"><label>Catégorie *</label><select name="category" required><option>Salle</option><option>Traiteur</option><option>Photo & vidéo</option><option>Décoration</option><option>DJ / orchestre</option><option>Beauté / tenues</option><option>Autre</option></select></div>
-            <div class="field full"><label>Instagram / site</label><input name="website"></div>
+            <div class="field"><label>Catégorie *</label><select name="category" required><option>Salle</option><option>Traiteur</option><option>Photo & vidéo</option><option>Décoration</option><option>DJ / orchestre</option><option>Beauté / tenues</option><option>Transport</option><option>Hébergement</option><option>Autre</option></select></div>
+            <div class="field full"><label>Instagram / site</label><input name="website" inputmode="url"></div>
             <div class="field full"><label>Présentez votre activité</label><textarea name="description" rows="4"></textarea></div>
-            <div class="field full"><label class="check"><input type="checkbox" name="consent" value="true" required> J'accepte d'être recontacté(e) au sujet du référencement DZAIRLY.</label></div>
+            <div class="field full"><label class="check"><input type="checkbox" name="consent" value="true" required> J'accepte d'être recontacté(e) au sujet du référencement DZAIRLY et j'ai pris connaissance de la <a href="/confidentialite.html">politique de confidentialité</a>.</label></div>
           </div>
+
           <button class="btn btn-terracotta" type="submit" style="width:100%;margin-top:18px">Référencer mon activité →</button>
-          <div class="success"></div>
+          <div class="success" role="status" aria-live="polite"></div>
         </form>
+      </div>
+    </section>
+
+    <section class="section faq-section">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="kicker">Questions fréquentes</div>
+            <h2>Organiser depuis l'étranger, simplement.</h2>
+          </div>
+        </div>
+
+        <div class="faq-list">
+          <details>
+            <summary>DZAIRLY prend-il les paiements aujourd'hui ?</summary>
+            <p>Non. Pendant la bêta, DZAIRLY facilite la mise en relation, les demandes de devis et l'accompagnement. Aucun paiement n'est encaissé par la plateforme.</p>
+          </details>
+          <details>
+            <summary>Comment sont sélectionnés les prestataires ?</summary>
+            <p>Les candidatures sont revues avant publication. Le badge « Vérifié » n'est affiché que lorsqu'une vérification complémentaire a été effectuée.</p>
+          </details>
+          <details>
+            <summary>Puis-je organiser autre chose qu'un mariage ?</summary>
+            <p>Oui. Le formulaire permet déjà les fiançailles, hennés, anniversaires, événements familiaux et événements professionnels.</p>
+          </details>
+          <details>
+            <summary>À quoi sert la conciergerie ?</summary>
+            <p>Elle est destinée aux besoins qui nécessitent une présence locale : visite vidéo, vérification, récupération d'un devis ou coordination sur place.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="section launch-cta">
+      <div class="container">
+        <div class="launch-card">
+          <div>
+            <div class="kicker">Votre événement commence ici</div>
+            <h2>Un projet en Algérie ? Décrivez-le en quelques minutes.</h2>
+          </div>
+          <a class="btn btn-terracotta track-cta" data-cta="bottom_project" href="#organiser">Créer mon projet →</a>
+        </div>
       </div>
     </section>
   </main>
 
+  <div class="mobile-cta">
+    <a class="btn btn-terracotta track-cta" data-cta="mobile_project" href="#organiser">Créer mon projet</a>
+  </div>
+
   <footer class="footer">
     <div class="container">
       <div class="footer-grid">
-        <div><a class="brand" href="#home"><span class="mark"></span>DZAIRLY</a><p class="muted">Votre événement en Algérie.<br>Sans la distance.</p></div>
-        <div><h4>Organiser</h4><a href="#organiser">Créer mon projet</a><a href="#prestataires">Prestataires</a><a href="#conciergerie">Conciergerie</a></div>
-        <div><h4>Professionnels</h4><a href="#pro">Devenir prestataire</a></div>
-        <div><h4>DZAIRLY</h4><a href="#home">À propos</a></div>
+        <div>
+          <a class="brand" href="#home"><span class="mark"></span>DZAIRLY</a>
+          <p class="muted">Votre événement en Algérie.<br>Sans la distance.</p>
+        </div>
+
+        <div>
+          <h4>Organiser</h4>
+          <a href="#organiser">Créer mon projet</a>
+          <a href="#prestataires">Prestataires</a>
+          <a href="#conciergerie">Conciergerie</a>
+        </div>
+
+        <div>
+          <h4>Professionnels</h4>
+          <a href="#pro">Devenir prestataire</a>
+          <a href="#evenements">Événements B2B</a>
+        </div>
+
+        <div>
+          <h4>Informations</h4>
+          <a href="/mentions-legales.html">Mentions légales</a>
+          <a href="/confidentialite.html">Confidentialité</a>
+          <a href="/cgu.html">Conditions d'utilisation</a>
+        </div>
       </div>
+
       <div class="copyright">© 2026 DZAIRLY · France ↔ Algérie · Version bêta</div>
     </div>
   </footer>
